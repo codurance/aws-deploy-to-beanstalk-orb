@@ -1,0 +1,43 @@
+description: >
+  Updates the environment on ELB with the new application version
+
+# parameters:
+#   application-name:
+#     description:
+#       "The name of the ELB application where we will be deploying the code"
+#     type: string
+
+#   deployable:
+#     description:
+#       "The name of the file that will be deployed into the environment"
+#     type: string
+
+  
+steps:
+  - run:
+      command: ls
+        
+  # - run:
+  #     command: |
+  #       set +e
+  #       if [ "$ENV_DESCRIPTOR" != "" ] ; then
+  #         local ENV_VERSION=$(echo "$ENV_DESCRIPTOR" | jq -r '.VersionLabel')
+  #         local ENV_STATUS=$(echo "$ENV_DESCRIPTOR" | jq -r '.Status')
+
+  #         if [ "$ENV_VERSION" != "$APPNAME-$VERSION" ] ; then
+  #           busyWaitEnvironmentStatus "$APPNAME" "$ENV"
+  #           echo "INFO: Updating environment $ENV with version $VERSION of $APPNAME"
+  #           ENV_DESCRIPTOR=$(aws elasticbeanstalk update-environment \
+  #           --environment-name "$ENV" \
+  #           --version-label "$APPNAME-$VERSION")
+  #           busyWaitEnvironmentStatus "$APPNAME" "$ENV"
+  #           echo INFO: Version $VERSION of "$APPNAME" deployed in environment
+  #           echo INFO: current status is $ENV_STATUS, goto http://$(echo $ENV_DESCRIPTOR | jq -r .CNAME)
+  #         else
+  #           echo INFO: Version $VERSION of "$APPNAME" already deployed in environment
+  #           echo INFO: current status is $ENV_STATUS, goto http://$(echo $ENV_DESCRIPTOR | jq -r .CNAME)
+  #         fi
+  #       else
+  #         echo INFO: Environment $ENV does not exists
+  #       fi
+

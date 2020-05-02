@@ -1,0 +1,12 @@
+version: 2.1
+
+description: >
+  Easily deploy applications into ELB environments on CircleCI withe the aws-deploy-to-elb orb
+
+display:
+  home_url: "https://aws.amazon.com/elasticbeanstalk/"
+  source_url: "https://github.com/codurance/aws-deploy-to-elb-orb"
+
+orbs:
+  aws-cli: circleci/aws-cli@1.0.0
+  jq: circleci/jq@2.0.1
