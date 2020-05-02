@@ -8,7 +8,7 @@ workflows:
     jobs:
       - orb-tools/lint
       - orb-tools/publish-dev:
-          context: codurance
+#          context: codurance-orbs
           checkout: true
           orb-path: src/@orb.yml
           orb-name: codurance/aws-deploy-to-beanstalk
@@ -21,7 +21,7 @@ workflows:
       # be skipped.
       # e.g. [semver:patch] will cause a patch version to be published.
       - orb-tools/dev-promote-prod-from-commit-subject:
-          context: codurance
+ #         context: codurance-orbs
           checkout: true
           orb-name: codurance/aws-deploy-to-beanstalk
           add-pr-comment: false
